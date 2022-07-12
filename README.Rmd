@@ -5,7 +5,3 @@ date: '2022-07-12'
 ---
 
 This is a project by Kingston Li analyzing data on video game sales. It uses the vgsales dataset from [kaggle](https://www.kaggle.com/datasets/gregorut/videogamesales).
-
-Include in your README:
-- A description (1-2 sentences) about your dataset
-- Your name

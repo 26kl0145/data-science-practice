@@ -1,6 +1,7 @@
 #### Load in csv file ####
 vgsales <- read.csv("data/vgsales.csv")
 View(vgsales)
+saveRDS(vgsales, "data/vgsales.RDS")
 
 ### Load in required datasets
 library(ggplot2)

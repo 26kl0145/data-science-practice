@@ -38,6 +38,7 @@ filter(starwars, hair_color %in% c("blond", "blonde"))
 # %in% just means "is in". Help save time when using a bunch of or's for the same variable
 importantPlanets <- c("Tatooine", "Naboo", "Hoth")
 filter(starwars, homeworld %in% importantPlanets)
+filter(starwars, homeworld %in% "Tatooine")
 
 filter(starwars, hair_color == "blond" & species == "Human")
 filter(starwars, species == "Human" & homeworld == "Tatooine" & skin_color == "fair")

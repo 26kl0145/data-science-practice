@@ -94,7 +94,10 @@ mass <- NA
 mass == 10 # returns NA
 is.na(mass) # return true
 ```
+`Publisher == "Nintendo"` only returns columns that exactly match "Nintendo"
+`"Nintendo" %in% Publisher` returns columns that contain "Nintendo"
 
+a row with the value "Nintendo, other company" under `Publisher` will return FALSE when using `==`, but will return TRUE when using `%in% `
 
 ### Arranging data
 `arrange()` reorders rows. It does not remove any rows
@@ -218,6 +221,7 @@ mean(starwars$mass, na.rm = T)
 species_masses <- summarise(group_by(starwars, species),
                             mean_mass = mean(mass, na.rm = T),
                             count = n()) # n() returns the number of values in each species
+species_masses
 
 # the pipe operator %>%
 # function(x, y) is the same as x %>% function(y)

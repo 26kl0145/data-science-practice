@@ -27,9 +27,9 @@ ggplot(data = Publisher_Sales, aes(x = Publisher, y = mean_Global_Sales, fill = 
 
 
 Nintendo_Games <- filter(vgsales, Publisher == "Nintendo")
-View(Nintendo_Games) # works
-#Nintendo_Games2 <- filter(vgsales, "Nintendo" %in% Publisher)
-#View(Nintendo_Games2) this isn't sorting out non-Nintendo publishers
+View(Nintendo_Games)
+Nintendo_Games2 <- filter(vgsales, Publisher %in% "Nintendo")
+View(Nintendo_Games2)
 
 ggplot(Nintendo_Games, aes(x = NA_Sales, y = EU_Sales)) +
   geom_line()
@@ -45,6 +45,10 @@ View(vgsales2)
 
 Game_Sales <- select(vgsales, Name, ends_with("Sales"))
 View(Game_Sales)
+
+
+Mario_Games <- filter(vgsales, grepl('Mario', Name))
+View(Mario_Games)
 
 
 

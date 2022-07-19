@@ -150,7 +150,7 @@ select(starwars, -(hair_color:eye_color))
 
 starwars_no_color <- select(starwars, -(hair_color:eye_color))
 starwars_no_color
-ggplot(starwars_no_color, aes(x = hair_color)) # error because we removed it
+# ggplot(starwars_no_color, aes(x = hair_color)) # error because we removed it
 
 select(starwars, contains("color"))
 select(starwars, ends_with("color"))

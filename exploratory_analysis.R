@@ -24,6 +24,9 @@ ggplot(data = Publisher_Sales, aes(x = Publisher, y = mean_Global_Sales, fill = 
   labs(title = "Average Sales by Publisher of Top 50 Highest Selling Games",
        y = "Average Sales (millions)")
 
+#ggplot(data = Publisher_Sales, aes(x = Publisher)) +
+#  geom_bar(stat = "count")
+
 
 
 Nintendo_Games <- filter(vgsales, Publisher == "Nintendo")
@@ -32,7 +35,7 @@ Nintendo_Games2 <- filter(vgsales, Publisher %in% "Nintendo")
 View(Nintendo_Games2)
 
 ggplot(Nintendo_Games, aes(x = NA_Sales, y = EU_Sales)) +
-  geom_line()
+  geom_line(color = "dark blue")
 
 
 
@@ -56,3 +59,24 @@ vgsales_JP <- arrange(vgsales, desc(JP_Sales))
 View(vgsales_JP) # sorts by highest selling games in JP
 
 
+
+mostly_NA_Games <- filter(vgsales, NA_Sales*2 > Global_Sales)
+View(mostly_NA_Games)
+
+
+
+
+## Practice using t-tests
+
+Electronic_Arts <- filter(vgsales, Publisher == "Electronic Arts")
+Activision <- filter(vgsales, Publisher == "Activision")
+
+t.test(Electronic_Arts$Global_Sales, Activision$Global_Sales)
+
+
+vgsales_top100 <- slice_head(vgsales, n = 100)
+Global_Sales_anova <- aov(data = vgsales_top100, Year ~ Publisher) # comparing publisher by 
+# average year that they released their games
+# I think
+summary(Global_Sales_anova)
+TukeyHSD(Global_Sales_anova)

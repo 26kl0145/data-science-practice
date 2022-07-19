@@ -5,6 +5,7 @@ saveRDS(vgsales, "data/vgsales.RDS")
 
 ### Load in required datasets
 library(ggplot2)
+library(dplyr)
 
 ## Practice plotting with your dataset
 ggplot(data = vgsales, aes(x = Genre, y = NA_Sales)) +
